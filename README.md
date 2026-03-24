@@ -1,4 +1,4 @@
-# CineMatch — Community Movie Recommender
+# Recommendation Engine 
 
 A full-stack movie recommendation platform that combines semantic AI embeddings, tag-based similarity, your personal watch history, and real-time crowd wisdom into a single hybrid score — no black box, every recommendation is fully explained.
 
