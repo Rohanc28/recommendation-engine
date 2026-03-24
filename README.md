@@ -1,12 +1,12 @@
 # Recommendation Engine 
 
-A full-stack movie recommendation platform that combines semantic AI embeddings, tag-based similarity, your personal watch history, and real-time crowd wisdom into a single hybrid score — no black box, every recommendation is fully explained.
+A full-stack movie recommendation platform that combines semantic AI embeddings, tag-based similarity, your personal watch history, and real-time crowd wisdom into a single hybrid score.
 
 ---
 
 ## How the Recommendation Engine Works
 
-When you ask "what's similar to Inception?", five things happen in sequence:
+Example: When you ask "what's similar to Inception?", five things happen in sequence:
 
 ### 1. Semantic Embedding (50% of score)
 Every movie is encoded into a 384-dimensional vector using **`all-MiniLM-L6-v2`** (sentence-transformers). The encoding input is:
