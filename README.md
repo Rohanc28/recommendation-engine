@@ -255,3 +255,14 @@ The seeder creates a demo user (`seeder@movies.demo` / `seedpass123`) that owns 
 3. Run `python seed.py` to re-seed into the new database.
 
 No code changes needed — `PortableUUID` and `EmbeddingType` are dialect-agnostic custom column types that work identically on both databases.
+
+# Citations
+```Bollywood-Movie-Dataset``` used for testing:
+```
+  author = {Deven Bhagtani},
+  title = {IMDB Movie Dataset(2023-1951)},
+  year = {2023},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/devensinghbhagtani/Bollywood-Movie-Dataset}},
+  ```
