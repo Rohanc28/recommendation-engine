@@ -15,7 +15,7 @@ services:
     environment:
       DEMO_MODE: "true"
       SECRET_KEY: "demo-secret-change-in-prod-!!!!!!!"
-      DATABASE_URL: "sqlite+aiosqlite:///./cinematch.db"
+      DATABASE_URL: "sqlite+aiosqlite:///./movies.db"
       CORS_ORIGINS: '["http://localhost:5173","http://localhost:3000","http://localhost:80"]'
     ports:
       - "8000:8000"

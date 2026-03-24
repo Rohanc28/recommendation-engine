@@ -29,6 +29,6 @@ export const useAuthStore = create<AuthState>()(
       },
       isAuthenticated: () => !!get().user && !!get().accessToken,
     }),
-    { name: "cinematch-auth", partialize: (s) => ({ user: s.user, accessToken: s.accessToken, refreshToken: s.refreshToken }) }
+    { name: "rec-engine-auth", partialize: (s) => ({ user: s.user, accessToken: s.accessToken, refreshToken: s.refreshToken }) }
   )
 );

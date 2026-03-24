@@ -33,7 +33,7 @@ export default function LoginPage() {
       <div className="w-full max-w-sm space-y-6">
         <div className="text-center">
           <Film className="mx-auto h-10 w-10 text-brand-400" />
-          <h1 className="mt-2 text-2xl font-bold">Sign in to CineMatch</h1>
+          <h1 className="mt-2 text-2xl font-bold">Sign in</h1>
           <p className="mt-1 text-sm text-gray-400">Discover movies you'll love</p>
         </div>
 

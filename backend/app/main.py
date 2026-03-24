@@ -26,7 +26,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="CineMatch — Community Movie Recommender",
+    title="Community Movie Recommendation Engine",
     version="1.0.0",
     description="Hybrid recommendation engine: embeddings + tags + user prefs + community votes",
     lifespan=lifespan,

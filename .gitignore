@@ -11,9 +11,9 @@ dist/
 build/
 
 # Database
-backend/cinematch.db
-backend/cinematch.db-shm
-backend/cinematch.db-wal
+backend/movies.db
+backend/movies.db-shm
+backend/movies.db-wal
 
 # Environment
 .env

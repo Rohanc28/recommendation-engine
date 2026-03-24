@@ -37,7 +37,7 @@ WIKI_API    = "https://en.wikipedia.org/w/api.php"
 CONCURRENCY = 20
 BATCH_SIZE  = 200
 TIMEOUT     = 10.0
-HEADERS     = {"User-Agent": "CineMatchDemo/1.0 (movie-recommender demo app)"}
+HEADERS     = {"User-Agent": "MovieRecommenderDemo/1.0 (movie-recommender demo app)"}
 
 SCRIPT_DIR = Path(__file__).parent
 

@@ -1,4 +1,4 @@
-# Recommendation Engine 
+# Community Movie Recommendation Engine
 
 A full-stack movie recommendation platform that combines semantic AI embeddings, tag-based similarity, your personal watch history, and real-time crowd wisdom into a single hybrid score.
 
@@ -178,11 +178,11 @@ Frontend is live at `http://localhost:5173`
 
 ```bash
 # Build and push image
-gcloud builds submit --tag gcr.io/YOUR_PROJECT/cinematch-backend backend/
+gcloud builds submit --tag gcr.io/YOUR_PROJECT/rec-engine-backend backend/
 
 # Deploy (free tier: 1 vCPU, 1 GB RAM, min 1 instance to avoid cold starts)
-gcloud run deploy cinematch-backend \
-  --image gcr.io/YOUR_PROJECT/cinematch-backend \
+gcloud run deploy rec-engine-backend \
+  --image gcr.io/YOUR_PROJECT/rec-engine-backend \
   --platform managed --region us-central1 \
   --allow-unauthenticated \
   --memory 1Gi --cpu 1 \
@@ -210,7 +210,7 @@ vercel deploy
 
 | Variable | Default | Description |
 |---|---|---|
-| `DATABASE_URL` | `sqlite+aiosqlite:///./cinematch.db` | Swap to `postgresql+asyncpg://...` for production |
+| `DATABASE_URL` | `sqlite+aiosqlite:///./movies.db` | Swap to `postgresql+asyncpg://...` for production |
 | `SECRET_KEY` | *(change this)* | JWT signing key — min 32 chars |
 | `ACCESS_TOKEN_EXPIRE_MINUTES` | `60` | JWT access token lifetime |
 | `CORS_ORIGINS` | `["http://localhost:5173"]` | JSON array of allowed origins |
@@ -241,7 +241,7 @@ python fetch_posters.py --limit 50
 python fetch_posters.py --overwrite
 ```
 
-The seeder creates a demo user (`seeder@cinematch.demo` / `seedpass123`) that owns all seeded movies.
+The seeder creates a demo user (`seeder@movies.demo` / `seedpass123`) that owns all seeded movies.
 
 ---
 
@@ -249,7 +249,7 @@ The seeder creates a demo user (`seeder@cinematch.demo` / `seedpass123`) that ow
 
 1. Change `DATABASE_URL` in `.env`:
    ```
-   DATABASE_URL=postgresql+asyncpg://user:password@host:5432/cinematch
+   DATABASE_URL=postgresql+asyncpg://user:password@host:5432/moviedb
    ```
 2. For production-scale vector search, add the `pgvector` extension and swap numpy cosine similarity for `<=>` operator queries — the embedding column is already sized correctly (384 floats).
 3. Run `python seed.py` to re-seed into the new database.

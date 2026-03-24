@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center gap-2 text-xl font-bold text-brand-400">
           <Film className="h-6 w-6" />
-          CineMatch
+          Movie Recommender
         </Link>
 
         <div className="flex items-center gap-2">

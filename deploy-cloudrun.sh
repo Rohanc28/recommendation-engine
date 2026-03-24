@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ─────────────────────────────────────────────────────────────────────────────
-# CineMatch — Cloud Run free-tier deployment script
+# Recommendation Engine — Cloud Run free-tier deployment script
 #
 # Requirements:
 #   gcloud CLI authenticated  (gcloud auth login)
@@ -15,7 +15,7 @@ set -euo pipefail
 
 PROJECT_ID=$(gcloud config get-value project)
 REGION=${REGION:-us-central1}
-SERVICE_NAME=${SERVICE_NAME:-cinematch-backend}
+SERVICE_NAME=${SERVICE_NAME:-rec-engine-backend}
 IMAGE="gcr.io/${PROJECT_ID}/${SERVICE_NAME}"
 
 echo "▶ Project : ${PROJECT_ID}"
@@ -44,9 +44,9 @@ gcloud run deploy "${SERVICE_NAME}" \
   --max-instances 3 \
   --timeout 60 \
   --set-env-vars "DEMO_MODE=true" \
-  --set-env-vars "DATABASE_URL=sqlite+aiosqlite:///./cinematch.db" \
+  --set-env-vars "DATABASE_URL=sqlite+aiosqlite:///./movies.db" \
   --set-env-vars "SECRET_KEY=${SECRET_KEY:-CHANGE_ME_BEFORE_DEPLOY_32chars!!}" \
-  --set-env-vars "CORS_ORIGINS=[\"${FRONTEND_URL:-https://cinematch-demo.vercel.app}\"]"
+  --set-env-vars "CORS_ORIGINS=[\"${FRONTEND_URL:-https://recommendation-engine.vercel.app}\"]"
 
 SERVICE_URL=$(gcloud run services describe "${SERVICE_NAME}" \
   --region "${REGION}" \

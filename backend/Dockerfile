@@ -35,7 +35,7 @@ COPY . .
 # Cloud Run injects PORT; default to 8000 for local docker run
 ENV PORT=8000
 ENV DEMO_MODE=true
-ENV DATABASE_URL=sqlite+aiosqlite:///./cinematch.db
+ENV DATABASE_URL=sqlite+aiosqlite:///./movies.db
 
 # create_all() runs at startup — no migration step needed
 CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT} --workers 1

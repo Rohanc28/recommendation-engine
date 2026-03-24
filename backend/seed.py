@@ -9,7 +9,7 @@ Strategy
 - All movie embeddings are computed in one batched call — much faster than
   per-request HTTP.
 - Skips rows whose title already exists in the DB.
-- Creates / reuses a seed user (seeder@cinematch.local / seedpass123).
+- Creates / reuses a seed user (seeder@movies.demo / seedpass123).
 
 Usage
 -----
@@ -101,7 +101,7 @@ async def main():
 
     async with AsyncSessionLocal() as db:
         # ── seed user ─────────────────────────────────────────────────────────
-        SEED_EMAIL = "seeder@cinematch.demo"
+        SEED_EMAIL = "seeder@movies.demo"
         seeder = (await db.execute(
             select(User).where(User.email == SEED_EMAIL)
         )).scalar_one_or_none()

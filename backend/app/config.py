@@ -5,13 +5,13 @@ import json
 
 class Settings(BaseSettings):
     # SQLite default — swap to postgresql+asyncpg://... for production
-    DATABASE_URL: str = "sqlite+aiosqlite:///./cinematch.db"
+    DATABASE_URL: str = "sqlite+aiosqlite:///./movies.db"
 
     SECRET_KEY: str = "change-me-in-production-min-32-chars-please!!"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
-    CORS_ORIGINS: str = '["http://localhost:5173","http://localhost:3000","https://cinematch-demo.vercel.app"]'
+    CORS_ORIGINS: str = '["http://localhost:5173","http://localhost:3000","https://recommendation-engine.vercel.app"]'
 
     EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"
     EMBEDDING_DIM: int = 384
