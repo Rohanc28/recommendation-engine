@@ -256,13 +256,22 @@ The seeder creates a demo user (`seeder@movies.demo` / `seedpass123`) that owns 
 
 No code changes needed — `PortableUUID` and `EmbeddingType` are dialect-agnostic custom column types that work identically on both databases.
 
-# Citations
- [# Bollywood-Movie-Dataset](https://github.com/devensinghbhagtani/Bollywood-Movie-Dataset) used for testing:
-```
+## Dataset
+
+This project uses a movie dataset sourced from:
+https://github.com/devensinghbhagtani/Bollywood-Movie-Dataset 
+
+[Bollywood-Movie-Dataset](https://github.com/devensinghbhagtani/Bollywood-Movie-Dataset)
+Thanks to Deven Bhagtani, the original author for making the dataset publicly available.
+
+## Citation
+
+```bibtex
+@misc{yourusername/movie-dataset-2023,
   author = {Deven Bhagtani},
   title = {IMDB Movie Dataset(2023-1951)},
   year = {2023},
   publisher = {GitHub},
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/devensinghbhagtani/Bollywood-Movie-Dataset}},
-  ```
+}
