@@ -60,10 +60,9 @@ Every score component is returned alongside the result — you can see exactly w
 | **Similarity** | numpy dot product | Replaces pgvector — works on any host, same math |
 | **Auth** | JWT (python-jose) + bcrypt | Stateless tokens, refresh flow, no passlib dependency |
 | **Frontend** | React 18 + TypeScript + Vite | Fast HMR, type safety end-to-end |
-| **State** | Zustand + TanStack Query | Minimal auth store, server-state caching with stale-while-revalidate |
-| **Styling** | Tailwind CSS | Utility-first, dark theme, no CSS files to maintain |
-| **Deployment** | Cloud Run (backend) + Vercel (frontend) | Both have generous free tiers, no always-on cost |
-| **Demo cache** | In-process Python dict | Avoids Redis/external state on single-instance Cloud Run |
+
+| **Deployment(*)** | Cloud Run (backend) + Vercel (frontend) | Both have generous free tiers, no always-on cost |
+| **Demo cache(*)** | In-process Python dict | Avoids Redis/external state on single-instance Cloud Run |
 
 ---
 
@@ -173,7 +172,7 @@ Frontend is live at `http://localhost:5173`
 
 ---
 
-## Deployment
+## Deployment (optional)
 
 ### Backend — Google Cloud Run
 
@@ -226,7 +225,7 @@ vercel deploy
 
 ---
 
-## Seeding & Poster Data
+## Seeding (encode and embed from csv) & Poster Data (show movie poster img)
 
 ```bash
 # Seed all movies from the CSV (batch encodes all embeddings in one pass)
