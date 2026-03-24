@@ -1,0 +1,20 @@
+Quick Start
+
+  # 1. Start DB + backend + frontend
+  docker compose up
+
+  # OR run locally:
+
+  # Backend
+  cd backend
+  cp .env.example .env   # edit DB URL + SECRET_KEY
+  pip install -r requirements.txt
+  alembic upgrade head
+  uvicorn app.main:app --reload
+
+  # Frontend
+  cd frontend
+  npm install
+  npm run dev            # http://localhost:5173
+
+  API docs at http://localhost:8000/docs

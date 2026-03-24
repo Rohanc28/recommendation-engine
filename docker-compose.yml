@@ -1,0 +1,37 @@
+version: "3.9"
+
+# ── Local demo: single backend container + Vite dev server ───────────────────
+#
+# Usage:
+#   docker compose up backend          # API only  →  http://localhost:8000
+#   cd frontend && npm run dev         # UI        →  http://localhost:5173
+#
+# Full stack (prod-like, frontend served by nginx):
+#   docker compose --profile full up
+
+services:
+  backend:
+    build: ./backend
+    environment:
+      DEMO_MODE: "true"
+      SECRET_KEY: "demo-secret-change-in-prod-!!!!!!!"
+      DATABASE_URL: "sqlite+aiosqlite:///./cinematch.db"
+      CORS_ORIGINS: '["http://localhost:5173","http://localhost:3000","http://localhost:80"]'
+    ports:
+      - "8000:8000"
+    volumes:
+      # Persist SQLite file across restarts during local dev
+      - sqlite_data:/app
+
+  frontend:
+    profiles: ["full"]
+    build: ./frontend
+    environment:
+      VITE_API_URL: "http://backend:8000"
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  sqlite_data:
