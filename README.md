@@ -99,7 +99,19 @@ movie-recommender/
 └── data/
     └── IMDB-Movie-Dataset(2023-1951).csv   # 2,200+ movies
 ```
+## Future features:
 
+- Dealing with recency bias of newly released or trending content:
+  - New content gets disproportionate visibility as users interact with them more, engine overweights recent interactions which causes short term trends to dominate recommendaitons.
+- Review Bombing:
+  - Coordinated users flood low/high ratings to manipulate rankings/reviews. Causes skewed ratings, need a user-credibility filter to tune reviews
+- Cold start problem:
+  - new users have no history and new movies may have no ratings. Requires broader content/genre tag based filtering and onboarding questionnaire.
+- Temporal decay on votes/interactions, Ratings not used for preference scoring currently
+- Users' taste change over time:
+  - Give higher weight to recent user behavior and introduce exploration to prevent same feedback loop
+- Analytics and metrics logging:
+  - Check user retention, diversity score, Trust score, movie/user review activity over time.
 ---
 
 ## Running Locally
